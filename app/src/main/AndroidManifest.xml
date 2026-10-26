@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
     <application
         android:name=".GugaApplication"
         android:allowBackup="false"
@@ -19,6 +28,44 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".alarm.AlarmRingingActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:theme="@style/Theme.Guga" />
+
+        <activity
+            android:name=".briefing.MorningBriefingPlaceholderActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Guga" />
+
+        <activity
+            android:name=".location.HomeLocationSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Guga" />
+
+        <activity
+            android:name=".settings.SettingsHubActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Guga" />
+
+        <activity
+            android:name=".settings.LlmSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Guga" />
+
+        <activity
+            android:name=".settings.TtsSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Guga" />
+
+        <receiver
+            android:name=".alarm.AlarmReceiver"
+            android:exported="false" />
     </application>
 
 </manifest>
